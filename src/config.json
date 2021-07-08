@@ -1,0 +1,14 @@
+{
+    "config":{
+        "playButton":true,
+        "next":true,
+        "previous":true,
+        "img":true
+    },
+    "config2":{
+        "playButton":false,
+        "next":false,
+        "previous":false,
+        "img":false
+    }
+}
