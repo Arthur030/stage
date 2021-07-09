@@ -7,7 +7,7 @@ function PreviousButton() {
     if(configs.config.previous.valueOf(true)){
     return <button 
                 type="button"
-                class="next-button"
+                className="next-button"
                 aria-label="next"
                 >
                 <Previous />

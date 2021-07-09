@@ -3,13 +3,16 @@ import "./main.css";
 
 
 const Image = ({
-    isShowing
+    isShowing,
+    imgSrc
   }) => (
     <div className="image-container">
+        {/* if isShowing isTrue */}
     {isShowing ? (
-      <img src="https://images.unsplash.com/photo-1485579149621-3123dd979885?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9kY2FzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" 
+      <img src={imgSrc} 
            alt=""
            className="image" />
+        //    else
     ) : (null)}
   </div>
   );
