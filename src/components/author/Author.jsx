@@ -5,6 +5,7 @@ const Author = ({author}) => {
         <div>
             <h3
             className="author"
+            aria-label="Author"
             >
                 {author}
             </h3>

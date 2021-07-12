@@ -49,3 +49,8 @@
 .App h4 {
   color: #37788a;
 }
+
+.progressBarDiv {
+  display: flex;
+  flex-direction: column;
+}

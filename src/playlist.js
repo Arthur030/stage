@@ -9,6 +9,11 @@ import podcastimg4 from "./assets/sample4/sample4.jpg";
 
 
 const playlist = [
+    // duration:
+    // [0]=25:54 /static/media/sample1.93adab76.mp3
+    // [1]=1:45 /static/media/sample2.fc52c56b.mp3
+    // [2]=16.30 /static/media/sample3.dd610a4f.mp3
+    // [3]=30.53 /static/media/sample4.294f6f60.mp3
     {
         title: "The case of Charles Dexter Ward",
         author: "bbc",

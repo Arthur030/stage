@@ -5,6 +5,7 @@ const Title = ({title}) => {
         <div>
             <h2
             className="title"
+            aria-label="Title"
             >
                 {title}
             </h2>
