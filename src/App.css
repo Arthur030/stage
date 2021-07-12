@@ -21,7 +21,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,4 +40,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title, .author {
+  color: #61dafb;
+}
+
+.App h4 {
+  color: #37788a;
 }
