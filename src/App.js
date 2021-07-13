@@ -28,6 +28,7 @@ const App = () => {
   const progressBar = useRef();
   const animationRef = useRef();
   const firstAudio = useRef(new Audio(audio));
+  const isReady = useRef(false);
 
 
   const whilePlaying = () => {
@@ -42,17 +43,17 @@ const App = () => {
   }
   
   //Play/Pause
-  const togglePausePlay = () => {
-    setisPlaying(!isPlaying);
-    if (isPlaying){
-      firstAudio.current.pause();
-      cancelAnimationFrame(animationRef.current);
-    } else {
-      console.log(firstAudio.current);
-      firstAudio.current.play();
-      animationRef.current = requestAnimationFrame(whilePlaying);
-    }
-  }
+  // const togglePausePlay = () => {
+  //   setisPlaying(!isPlaying);
+  //   if (isPlaying){
+  //     firstAudio.current.pause();
+  //     cancelAnimationFrame(animationRef.current);
+  //   } else {
+  //     console.log(firstAudio.current);
+  //     firstAudio.current.play();
+  //     animationRef.current = requestAnimationFrame(whilePlaying);
+  //   }
+  // }
   // progress Bar -----------------------
   
   const calculateTime = (secs) => {
@@ -77,29 +78,29 @@ const App = () => {
   
 // ----------------------------------
 
-//Pause current audio and play another one from updated playlistIndex[]
-// const changePlaylist = () => {
-//     firstAudio.current.pause();
-//     firstAudio.current.currentTime = 0;
-//     firstAudio.current = new Audio(audio);
-//     firstAudio.current.play();
-//     console.log(firstAudio.audio);
-      
-// }
 // when index changes
+
+useEffect(() => {
+  if (isPlaying) {
+    firstAudio.current.play();
+    whilePlaying();
+  } else {
+    firstAudio.current.pause();
+    animationRef.current = requestAnimationFrame(whilePlaying);
+  }
+}, [isPlaying]);
+
 useEffect(() => {
   firstAudio.current.pause();
   firstAudio.current = new Audio(audio);
-  //need to change that
-  let a = false;
-  if (isPlaying){ 
+  
+  
+  if (isReady.current){ 
     firstAudio.current.play();
-    //V
-    let a = true
-            //V
-  } else if (a = false) {
     setisPlaying(true);
-
+    
+  } else {
+    isReady.current = true;
   }
 }, [playlistIndex])
 
@@ -142,7 +143,7 @@ useEffect(() => {
         />
         <PlayButton 
         isPlaying={isPlaying}
-        playPauseClick={togglePausePlay}
+        playPauseClick={setisPlaying}
         />
         <NextButton
         nextClick={next}
