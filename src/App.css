@@ -1,56 +1,54 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: rgb(226, 232, 240);
+  width: 1000px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+
 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image { 
+  width: 250px;
+  height: 250px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  /* min-height: 100vh; */
+.image-container { 
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.player-container {
+  padding-left: 15px;
+  text-align: start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.author {
+  color: #E64415;
 }
 
-.title, .author {
-  color: #61dafb;
+.title {
+  color: #000000;
+  width: 400px;
 }
 
-.App h4 {
-  color: #37788a;
+.progress-bar {
+  width: 100%;
 }
 
-.progressBarDiv {
+.time-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+.time-container h5 {
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+

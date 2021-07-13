@@ -125,19 +125,25 @@ useEffect(() => {
 
   return (
     <div className="App">
+      <div className="image-container">
       <Image 
       //
+      className="image"
+      alt={`cover of podcast by ${author}`}
       imgSrc={image}
-      isShowing={imageShowing} 
+      isShowing={imageShowing}
       />
+      </div>
+      <div className="player-container">
+        <Author
+        className="author"
+        author={author}
+        />
       <Title 
+      className="title"
         title={title}
-      />
-      <h4>by</h4>
-      <Author
-      author={author}
-      />
-      <header className="App-header">
+        />
+      <div className="button-container">
         <PreviousButton 
         previousClick={previous}
         />
@@ -148,19 +154,23 @@ useEffect(() => {
         <NextButton
         nextClick={next}
         />
-      </header>
+      </div>
       <div>
-        <h5>current time: {calculateTime(currentTime)}</h5>
         <input 
+        className="progress-bar"
         type="range"
         defaultValue="0"
         ref={progressBar}
         onChange={changeRange}
         aria-label="ProgressBar"
         />
-      <h5>duration: {calculateTime(duration)}</h5>
+      <div className="time-container">
+      <h5>{calculateTime(currentTime)}</h5>
+      <h5>{calculateTime(duration)}</h5>
       </div>
-    </div>
+      </div>
+      </div>
+        </div>
   );
 }
 
